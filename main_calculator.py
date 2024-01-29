@@ -1,21 +1,24 @@
-import calculator_operations
-
 def main():
     print("Simple Calculator")
-    num1 = float(input("Enter first number: "))
-    num2 = float(input("Enter second number: "))
-    operation = input("Enter operation (add, subtract, multiply, divide): ")
+    while True:
+        num1 = get_number("Enter first number: ")
+        num2 = get_number("Enter second number: ")
+        operation = get_operation()
 
-    if operation == 'add':
-        print("Result:", calculator_operations.add(num1, num2))
-    elif operation == 'subtract':
-        print("Result:", calculator_operations.subtract(num1, num2))
-    elif operation == 'multiply':
-        print("Result:", calculator_operations.multiply(num1, num2))
-    elif operation == 'divide':
-        print("Result:", calculator_operations.divide(num1, num2))
-    else:
-        print("Invalid operation")
+        if operation == 'add':
+            result = calculator_operations.add(num1, num2)
+        elif operation == 'subtract':
+            result = calculator_operations.subtract(num1, num2)
+        elif operation == 'multiply':
+            result = calculator_operations.multiply(num1, num2)
+        elif operation == 'divide':
+            result = calculator_operations.divide(num1, num2)
+
+        print("Result:", result)
+        
+        if input("Do another calculation? (yes/no): ").lower() != 'yes':
+            return result  # 返回最后一个计算结果并退出
 
 if __name__ == "__main__":
-    main()
+    final_result = main()
+    print("Final Result:", final_result)

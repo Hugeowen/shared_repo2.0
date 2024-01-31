@@ -13,6 +13,9 @@ def main():
             result = calculator_operations.multiply(num1, num2)
         elif operation == 'divide':
             result = calculator_operations.divide(num1, num2)
+        elif operation == 'square_root':
+            result = calculator_operations.square_root(num1)
+        elif operation == ''
 
         print("Result:", result)
         
